@@ -1,0 +1,58 @@
+version: "3.1"
+
+rules:
+- rule: Respond to greetings
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Recommend precautions
+  steps:
+  - intent: inform_symptoms
+  - action: action_get_diagnosis
+
+- rule: Inform Time
+  steps:
+  - intent: give_time
+  - action: action_give_time
+
+- rule: Disease info
+  steps:
+  - intent: question_disease
+  - action: action_disease_info
+
+- rule: Inform disease
+  steps:
+  - intent: inform_disease
+  - action: action_disease_info
+
+- rule: Handle goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Handle thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+#- rule: Fallback rule
+#  steps:
+#  - intent: deny
+#  - action: utter_deny
+#  - action: utter_deny2
+#
+#- rule: Confirm affirmation
+#  condition:
+#  - active_loop: null
+#  steps:
+#  - intent: affirm
+#  - action: utter_happy
+#
+#- rule: Confirm denial
+#  condition:
+#  - active_loop: null
+#  steps:
+#  - intent: deny
+#  - action: utter_deny
+

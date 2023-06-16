@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-disease",
+      "2": "I-disease",
+      "3": "L-disease",
+      "4": "U-disease",
+      "5": "B-name",
+      "6": "I-name",
+      "7": "L-name",
+      "8": "U-name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-disease": 1,
+      "I-disease": 2,
+      "L-disease": 3,
+      "U-disease": 4,
+      "B-name": 5,
+      "I-name": 6,
+      "L-name": 7,
+      "U-name": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

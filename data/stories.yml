@@ -1,0 +1,102 @@
+version: "3.1"
+
+stories:
+- story: greet user by name
+  steps:
+  - intent: get_name
+  - action: utter_name
+  - intent: greet
+  - action: utter_greet
+
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: thanks
+  - action: utter_thanks
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_unhappy
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_unhappy
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny
+
+- story: reject the bot
+  steps:
+    - intent: deny
+    - action: utter_deny
+
+- story: bot challenge 1
+  steps:
+    - intent: bot_challenge
+    - action: utter_bot
+    - intent: question
+    - action: utter_bot
+    - intent: challenge
+    - action: utter_challenge
+
+- story: bot challenge 2
+  steps:
+    - intent: intro_love
+    - action: utter_love
+    - intent: intro_cute
+    - action: utter_love
+    - intent: intro_unhappy
+    - action: utter_deny
+
+- story: disease know
+  steps:
+    - intent: inform_symptoms
+    - action: action_get_diagnosis
+    - intent: affirm
+    - action: utter_happy
+    - intent: deny
+    - action: utter_deny
+
+- story: disease info 1
+  steps:
+    - intent: question_disease
+    - action: action_disease_info
+    - intent: affirm
+    - action: utter_happy
+    - intent: deny
+    - action: utter_deny3
+
+- story: disease info 2
+  steps:
+    - intent: inform_disease
+    - action: action_disease_info
+    - intent: affirm
+    - action: utter_happy
+    - intent: deny
+    - action: utter_deny3
+
+- story: path about time
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: give_time
+    - action: action_give_time
+
+
+
+

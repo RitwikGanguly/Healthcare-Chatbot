@@ -1,0 +1,112 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - question
+  - challenge
+  - intro_love
+  - intro_cute
+  - intro_unhappy
+  - get_name
+  - inform_symptoms
+  - question_disease
+  - give_time
+  - inform_disease
+
+entities:
+  - disease
+
+slots:
+  disease:
+    type: text
+    influence_conversation: True
+    mappings:
+      - type: from_entity
+        entity: disease
+
+
+actions:
+  - action_get_diagnosis
+  - action_give_time
+  - action_disease_info
+
+responses:
+  utter_greet:
+    - text: "Hey Welcome, how can I assist you today?"
+    - text: "Hi dear!!!!, speak up with your problem"
+    - text: "Hey!! Risa here, Know me, how can I help you"
+    - text: "Hi, What symptoms are you experiencing?"
+
+
+  utter_did_that_help:
+  - text: "Did you find the solution?"
+  - text: "is this helpful??"
+  - text: "Did you get the cure of your symptoms??"
+
+  utter_happy:
+  - text: "Great, carry on!, tell me if you have any other problem"
+
+
+  utter_goodbye:
+  - text: "Goodbye, see you soon!"
+  - text: "Come back!! Again and find your solution in Healthcare"
+  - text: "Goodbye, take care!!!"
+
+  utter_thanks:
+    - text: "No issues mate, We are here to help."
+
+  utter_iamabot:
+  - text: "I am Risa, powered by Rasa and made with love by 'The Skill Prodigies'. "
+
+  utter_name:
+  - text: "Hey dear, Risa Here, Made by the team 'THE SKILL PRODIGIES' with RASA, Always for your service in healthcare"
+  - text: "Hey, Risa Here, Made by the team 'THE SKILL PRODIGIES' with RASA, say your symptoms I will try my best to help you out."
+  - text: "Hey 😉, Risa Here, Made by the team 'THE SKILL PRODIGIES' with RASA, tell me your symptoms, I will Help you out!!!"
+
+  utter_deny:
+    - text: "Can you tell me your 3 to 4 symptoms of your problem again"
+    - text: "Can your repeat your problem, I will try to find the best solution again"
+    - text: "Sorry!!! for the inconvenience caused, please tell me your problem again."
+
+  utter_unhappy:
+    - text: "Don't worry tell me your symptoms, I will find the solution."
+    - text: "Don't lose hope, Risa is ready for your service"
+      image: "https://dkk4qeqny48s0.cloudfront.net/wp-content/uploads/2019/02/chatbot_blog-1.jpg"
+
+  utter_bot:
+    - text: "I am a Healthcare Chatbot developed by team 'The Skill Prodigies', Always for your service, how can I help you."
+    - text: "I am Risa, Your virtual healthcare bot, How can I help you out."
+
+  utter_challenge:
+    - text: "Sorry, if I have said somthing wrong, I only can help you at the healthcare support."
+    - text: "Extreamly sorry if I said anything wrong, I only can give you the suggestion, for further treatment you have to consult any doctor."
+
+  utter_love:
+    - text: "Thanks for your sweet words, but I have not that time to give you time, there are so many ill persons whom I need to cure."
+    - text: "thanks mate, so many thanks for your sweet words, it motivate me a lot."
+
+  utter_happy2:
+    - text: "Tell me the disease on which you wanna know the information"
+    - text: "Tell me your disease"
+
+  utter_deny2:
+    - text: "Okay Come Back, when the problem occures"
+    - text: "Okay, no issues, go on"
+
+  utter_deny3:
+    - text: "can you tell me your disease again with proper spelling"
+    - text: "Sorry!!! for the inconvenience caused, please tell me your disease again."
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(9, 5, 63);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 100px;
+    position: relative;
+    margin-left: 400px;
+}
+
+.subtext {
+    font-family: inherit;
+    font-size: 20px;
+    margin-left: 300px;
+    margin-top: -80px;
+}
+
+.matter {
+    position: relative;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.matter p {
+    font-size: 25px;
+}
+
+.matter h1 {
+    font-size: 50px;
+    margin-left: 0px;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.logi {
+    position: absolute;
+    right : 200px;
+    top: 5px;
+}
+
+.sig {
+    position: absolute;
+    right : 80px;
+    top: 5px;
+}
+
