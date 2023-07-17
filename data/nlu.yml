@@ -214,6 +214,14 @@ nlu:
     - I have a rash
     - I feel dizzy
 
+- intent: ask_disease
+  examples: |
+    - I have one disease to ask
+    - Tell me about one disease
+    - I want to know the info about a disease
+    - I wanna know about one disease
+    - can you tell me about a disease
+
 - intent: question_disease
   examples: |
     - Tell me something about [Fever](disease)

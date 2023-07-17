@@ -63,28 +63,23 @@ stories:
     - intent: intro_unhappy
     - action: utter_deny
 
-- story: disease know
-  steps:
-    - intent: inform_symptoms
-    - action: action_get_diagnosis
-    - intent: affirm
-    - action: utter_happy
-    - intent: deny
-    - action: utter_deny
 
 - story: disease info 1
   steps:
     - intent: question_disease
     - action: action_disease_info
+    - action: action_listen
     - intent: affirm
     - action: utter_happy
     - intent: deny
     - action: utter_deny3
+    - action: utter_no_info
 
 - story: disease info 2
   steps:
     - intent: inform_disease
     - action: action_disease_info
+    - action: action_listen
     - intent: affirm
     - action: utter_happy
     - intent: deny
@@ -96,6 +91,13 @@ stories:
     - action: utter_greet
     - intent: give_time
     - action: action_give_time
+
+- story: disease ask
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_disease
+    - action: utter_ask_disease
 
 
 

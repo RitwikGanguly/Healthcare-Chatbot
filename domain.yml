@@ -15,6 +15,7 @@ intents:
   - intro_cute
   - intro_unhappy
   - get_name
+  - ask_disease
   - inform_symptoms
   - question_disease
   - give_time
@@ -104,6 +105,24 @@ responses:
     - text: "can you tell me your disease again with proper spelling"
     - text: "Sorry!!! for the inconvenience caused, please tell me your disease again."
 
+  utter_ask_disease:
+    - text: "Sure! Please provide the name of the disease you want information about."
+    - text: "of course!!, Tell me the name of the disease"
+    - text: "Sure, tell me the disease name"
+
+  utter_ask_more_info:
+    - text: "Did you get the information you were looking for? Is there anything else I can assist you with?"
+
+  utter_disease_info:
+    - text: "Here is some information about {disease}:\n{info}"
+      buttons:
+        - title: "More Info"
+          payload: "/more_info"
+
+
+  utter_no_info:
+    - text: "I'm sorry, I couldn't find information about that disease. Please try a different disease or use the correct spelling."
+    - text: "Really Sorry, I fail to find the information, please use other disease."
 
 
 

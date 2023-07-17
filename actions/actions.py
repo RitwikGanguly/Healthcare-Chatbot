@@ -97,44 +97,56 @@ class ActionGetDiagnosis(Action):
         disease = rg.loc[index, "Disease"]
 
         # Send the diagnosis as a response to the user
-        dispatcher.utter_message(text=f"According to your symptoms, you may have {disease}. \n "
-                                      f"The diagnosis of {disease} is {diagnosis}. \n Did you find this helpful?")
+        dispatcher.utter_message(text=f"According to your symptoms, you may have {disease}. || \n"
+                                      f"The diagnosis of {disease} is {diagnosis}. || \n Did you find this helpful?")
 
         return []
 
-# class ActionDiseaseInfo(Action):
-#     def name(self) -> Text:
-#         return "action_disease_info"
-#
-#
-#
-#     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#         disease = tracker.get_slot("disease")
-#         wiki_wiki = wikipediaapi.Wikipedia('en')
-#         page = wiki_wiki.page(disease)
-#         if page.exists():
-#             info = page.summary[0:1000]
-#         # info = self.get_disease_info(disease)
-#
-#             dispatcher.utter_message(response="action_disease_info", disease=disease, info=info)
-#             dispatcher.utter_message(text="did you get the info that you want")
-#
-#         else:
-#             dispatcher.utter_message("I'm sorry, I couldn't find information about that disease. Please try a different"
-#                                      "disease or use the disease with a correct spelling")
-#
-#         return []
-    # def get_disease_info(self, disease: Text) -> Text:
-    #     wiki_wiki = wikipediaapi.Wikipedia('en')
-    #     page_py = wiki_wiki.page(disease)
-    #
-    #     if page_py.exists():
-    #         return page_py.summary[0:500]  # Fetch the first 500 characters of the summary
-    #     else:
-    #         return None
+class ActionDiseaseInfo(Action):
+    def name(self) -> Text:
+        return "action_disease_info"
 
+
+    # def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    #     disease = tracker.get_slot("disease")
+    #     wiki_wiki = wikipediaapi.Wikipedia('en')
+    #     page = wiki_wiki.page(disease)
+    #     if page.exists():
+    #         info = page.summary[0:1000]
+    #     # info = self.get_disease_info(disease)
+    #
+    #         dispatcher.utter_message(response="action_disease_info", disease=disease, info=info)
+    #         dispatcher.utter_message(text="did you get the info that you want")
+    #
+    #     else:
+    #         dispatcher.utter_message("I'm sorry, I couldn't find information about that disease. Please try a different"
+    #                                  "disease or use the disease with a correct spelling")
+    #
+    #     return []
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict[Text, Any]]:
+        disease = tracker.get_slot("disease")
+        wiki_wiki = wikipediaapi.Wikipedia('en')
+        page = wiki_wiki.page(disease)
+
+        if page.exists():
+            info = page.summary[0:1000]
+            dispatcher.utter_message(
+                text=f"Here is some information about {disease}:\n{info}"
+            )
+            # dispatcher.utter_message(response="utter_ask_more_info")
+        else:
+            # dispatcher.utter_message(response="utter_no_info")
+            dispatcher.utter_message(
+                text="sorry, try another disease"
+            )
+
+        return []
 
 class ActionGettime(Action):
+
 
     def name(self) -> Text:
         return "action_give_time"
