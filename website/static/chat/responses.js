@@ -109,5 +109,5 @@ function getCurrentTimestamp() {
  * Set initial bot message to the screen for the user.
  */
 $(window).on('load', function () {
-    showBotMessage('Hello I am RISA your healthcare chatbot!.');
+    showBotMessage('Hello I am RISA your healthcare chatbot!, Now I am With Version 2.0.2.');
 });

@@ -53,12 +53,16 @@ nlu:
     - it helps
     - okay
     - okk
+    - it's helpful
+    - it's helped a lot mate
 
 - intent: thanks
   examples: |
     - thanks
     - thanks a lot
     - Appreciate your help
+    - Thanks Risa
+    - Thanks mate
 
 
 - intent: deny
@@ -93,6 +97,8 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - my experiance is great
+    - I enjoy a lot
 
 - intent: mood_unhappy
   examples: |
@@ -291,6 +297,13 @@ nlu:
     - got time
     - the time
     - whats the time
+
+- intent: hospital
+  examples: |
+    - tell my nearest 5 hospitals
+    - my coorsinate is 88.5269 and 22.36589 tell me 3 nearest hospital
+    - what are nearest healthcentre to me
+    - my latitude is 21.2356 and longitude is 88.23569, tell me the 6 nearest hospital
 
 
 

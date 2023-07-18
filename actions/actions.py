@@ -134,13 +134,14 @@ class ActionDiseaseInfo(Action):
         if page.exists():
             info = page.summary[0:1000]
             dispatcher.utter_message(
-                text=f"Here is some information about {disease}:\n{info}"
+                text=f"Here is some information about {disease} => \n{info} || Is this helpful ?"
             )
             # dispatcher.utter_message(response="utter_ask_more_info")
         else:
             # dispatcher.utter_message(response="utter_no_info")
             dispatcher.utter_message(
-                text="sorry, try another disease"
+                text="I'm sorry, I couldn't find information about that disease. Please try a different "
+                     "disease or use the disease with a correct spelling"
             )
 
         return []

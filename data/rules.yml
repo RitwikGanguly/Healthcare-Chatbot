@@ -1,58 +1,119 @@
 version: "3.1"
 
-rules:
-- rule: Respond to greetings
+stories:
+- story: greet user by name
   steps:
+  - intent: get_name
+  - action: utter_name
   - intent: greet
   - action: utter_greet
 
-- rule: Recommend precautions
-  steps:
-  - intent: inform_symptoms
-  - action: action_get_diagnosis
 
-- rule: Inform Time
+- story: happy path
   steps:
-  - intent: give_time
-  - action: action_give_time
-
-- rule: Disease info
-  steps:
-  - intent: question_disease
-  - action: action_disease_info
-
-- rule: Inform disease
-  steps:
-  - intent: inform_disease
-  - action: action_disease_info
-
-- rule: Handle goodbye
-  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
   - intent: goodbye
   - action: utter_goodbye
-
-- rule: Handle thanks
-  steps:
   - intent: thanks
   - action: utter_thanks
 
-#- rule: Fallback rule
-#  steps:
-#  - intent: deny
-#  - action: utter_deny
-#  - action: utter_deny2
-#
-#- rule: Confirm affirmation
-#  condition:
-#  - active_loop: null
-#  steps:
-#  - intent: affirm
-#  - action: utter_happy
-#
-#- rule: Confirm denial
-#  condition:
-#  - active_loop: null
-#  steps:
-#  - intent: deny
-#  - action: utter_deny
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_unhappy
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_unhappy
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny
+
+- story: reject the bot
+  steps:
+    - intent: deny
+    - action: utter_deny
+
+- story: bot challenge 1
+  steps:
+    - intent: bot_challenge
+    - action: utter_bot
+    - intent: question
+    - action: utter_bot
+    - intent: challenge
+    - action: utter_challenge
+
+- story: bot challenge 2
+  steps:
+    - intent: intro_love
+    - action: utter_love
+    - intent: intro_cute
+    - action: utter_love
+    - intent: intro_unhappy
+    - action: utter_deny
+
+- story: precautions 1
+  steps:
+    - intent: inform_symptoms
+    - action: action_get_diagnosis
+    - intent: affirm
+    - action: utter_happy3
+    - intent: deny
+    - action: utter_deny
+
+- story: disease info 1
+  steps:
+    - intent: question_disease
+    - action: action_disease_info
+    - action: action_listen
+    - intent: affirm
+    - action: utter_happy3
+    - intent: deny
+    - action: utter_deny3
+
+- story: disease info 2
+  steps:
+    - intent: inform_disease
+    - action: action_disease_info
+    - action: action_listen
+    - intent: affirm
+    - action: utter_happy3
+    - intent: deny
+    - action: utter_deny3
+
+- story: path about time
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: give_time
+    - action: action_give_time
+
+- story: disease ask
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_disease
+    - action: utter_ask_disease
+
+- story: hospital path 1
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: hospital
+    - action: utter_hospital
+
+
+
+
 

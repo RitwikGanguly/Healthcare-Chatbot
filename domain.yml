@@ -20,6 +20,7 @@ intents:
   - question_disease
   - give_time
   - inform_disease
+  - hospital
 
 entities:
   - disease
@@ -62,6 +63,7 @@ responses:
 
   utter_thanks:
     - text: "No issues mate, We are here to help."
+    - text: "Feel free to say any problem, ready to help always."
 
   utter_iamabot:
   - text: "I am Risa, powered by Rasa and made with love by 'The Skill Prodigies'. "
@@ -72,7 +74,6 @@ responses:
   - text: "Hey 😉, Risa Here, Made by the team 'THE SKILL PRODIGIES' with RASA, tell me your symptoms, I will Help you out!!!"
 
   utter_deny:
-    - text: "Can you tell me your 3 to 4 symptoms of your problem again"
     - text: "Can your repeat your problem, I will try to find the best solution again"
     - text: "Sorry!!! for the inconvenience caused, please tell me your problem again."
 
@@ -123,6 +124,15 @@ responses:
   utter_no_info:
     - text: "I'm sorry, I couldn't find information about that disease. Please try a different disease or use the correct spelling."
     - text: "Really Sorry, I fail to find the information, please use other disease."
+
+  utter_happy3:
+    - text: "Great, carry on!, tell me if you have any other problem. For your information now you can know the PRECAUTIONS ABOUT THE DISEASE,
+                                               INFORMATION ABOUT THE DISEASE & YOUR NEAREST HOSPITALS INFO."
+
+  utter_hospital:
+    - text: "Find your nearest hospitals : Follow the link(open the link in new tab/ instruction given onto the link) =>
+                                                      https://nearesthospitalchatbot-adbivic97cq.streamlit.app/"
+
 
 
 

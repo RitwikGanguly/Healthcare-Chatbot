@@ -63,6 +63,14 @@ stories:
     - intent: intro_unhappy
     - action: utter_deny
 
+- story: precautions 1
+  steps:
+    - intent: inform_symptoms
+    - action: action_get_diagnosis
+    - intent: affirm
+    - action: utter_happy3
+    - intent: deny
+    - action: utter_deny
 
 - story: disease info 1
   steps:
@@ -70,10 +78,9 @@ stories:
     - action: action_disease_info
     - action: action_listen
     - intent: affirm
-    - action: utter_happy
+    - action: utter_happy3
     - intent: deny
     - action: utter_deny3
-    - action: utter_no_info
 
 - story: disease info 2
   steps:
@@ -81,7 +88,7 @@ stories:
     - action: action_disease_info
     - action: action_listen
     - intent: affirm
-    - action: utter_happy
+    - action: utter_happy3
     - intent: deny
     - action: utter_deny3
 
@@ -98,6 +105,14 @@ stories:
     - action: utter_greet
     - intent: ask_disease
     - action: utter_ask_disease
+
+- story: hospital path 1
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: hospital
+    - action: utter_hospital
+
 
 
 
